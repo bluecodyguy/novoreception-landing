@@ -649,7 +649,7 @@ html:not(.js-ready) .reveal{opacity:1;transform:none}
           <div class="ci-icon">✉️</div>
           <div>
             <h4>Email</h4>
-            <p><a href="/cdn-cgi/l/email-protection#45312024286b2b2a332a3720262035312c2a2b052228242c296b262a28"><span class="__cf_email__" data-cfemail="aedacbcfc380c0c1d8c1dccbcdcbdedac7c1c0eec9c3cfc7c280cdc1c3">[email&#160;protected]</span></a></p>
+            <p><a id="emailLink" href="#">-</a></p>
           </div>
         </div>
         <div class="contact-row">
@@ -667,7 +667,7 @@ html:not(.js-ready) .reveal{opacity:1;transform:none}
           </div>
         </div>
       </div>
-      <form class="c-form reveal" action="https://formsubmit.co/team.novoreception@gmail.com" method="POST">
+      <form class="c-form reveal" id="contactForm" action="#" method="POST">
         <input type="hidden" name="_subject" value="New Consultation Request — NovoReception">
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_next" value="https://www.novoreception.com">
@@ -709,6 +709,17 @@ html:not(.js-ready) .reveal{opacity:1;transform:none}
 
 <!-- ═══ SCRIPTS ═══ -->
 <script>
+// Render email (avoids Cloudflare obfuscation)
+var eu = 'team.novoreception';
+var ed = 'gmail.com';
+var el = document.getElementById('emailLink');
+el.href = 'mai' + 'lto:' + eu + '@' + ed;
+el.textContent = eu + '@' + ed;
+
+// Set form action dynamically
+var form = document.getElementById('contactForm');
+form.action = 'https://formsubmit.co/' + eu + '@' + ed;
+
 // Tab switching
 document.querySelectorAll('.sim-tab').forEach(tab => {
   tab.addEventListener('click', () => {
@@ -721,7 +732,6 @@ document.querySelectorAll('.sim-tab').forEach(tab => {
 });
 
 // Form submission
-var form = document.querySelector('.c-form');
 form.addEventListener('submit', function(e) {
   e.preventDefault();
   var btn = form.querySelector('button[type="submit"]');
