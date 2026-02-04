@@ -649,7 +649,7 @@ html:not(.js-ready) .reveal{opacity:1;transform:none}
           <div class="ci-icon">✉️</div>
           <div>
             <h4>Email</h4>
-            <p><a id="emailLink" href="#">-</a></p>
+            <p><span id="emailLink" style="cursor:pointer;text-decoration:underline">loading...</span></p>
           </div>
         </div>
         <div class="contact-row">
@@ -710,16 +710,14 @@ html:not(.js-ready) .reveal{opacity:1;transform:none}
 <!-- ═══ SCRIPTS ═══ -->
 <script>
 // Render email (avoids Cloudflare obfuscation)
-var eu = 'team.novoreception';
-var ed = 'gmail.com';
-var ea = eu + '@' + ed;
+var p1 = 'team.novo';
+var p2 = 'reception';
+var p3 = 'gma';
+var p4 = 'il.com';
+var ea = p1 + p2 + String.fromCharCode(64) + p3 + p4;
 var el = document.getElementById('emailLink');
 el.textContent = ea;
-el.style.cursor = 'pointer';
-el.addEventListener('click', function(e) {
-  e.preventDefault();
-  window.location.href = 'mai' + 'lto:' + ea;
-});
+el.onclick = function() { window.location = 'mai' + 'lto:' + ea; };
 
 // Set form action dynamically
 var form = document.getElementById('contactForm');
