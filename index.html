@@ -640,7 +640,7 @@ footer a:hover{text-decoration:underline}
           <div class="ci-icon">✉️</div>
           <div>
             <h4>Email</h4>
-            <p><a href="mailto:team.novoreception@gmail.com">team.novoreception@gmail.com</a></p>
+            <p><a href="/cdn-cgi/l/email-protection#45312024286b2b2a332a3720262035312c2a2b052228242c296b262a28"><span class="__cf_email__" data-cfemail="aedacbcfc380c0c1d8c1dccbcdcbdedac7c1c0eec9c3cfc7c280cdc1c3">[email&#160;protected]</span></a></p>
           </div>
         </div>
         <div class="contact-row">
@@ -658,7 +658,11 @@ footer a:hover{text-decoration:underline}
           </div>
         </div>
       </div>
-      <form class="c-form reveal" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <form class="c-form reveal" action="https://formsubmit.co/team.novoreception@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="New Consultation Request — NovoReception">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://www.novoreception.com">
+        <input type="text" name="_honey" style="display:none">
         <div class="c-form-row">
           <input type="text" name="name" placeholder="Full name" required>
           <input type="email" name="email" placeholder="Email" required>
@@ -690,7 +694,7 @@ footer a:hover{text-decoration:underline}
 </footer>
 
 <!-- ═══ SCRIPTS ═══ -->
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // Tab switching
 document.querySelectorAll('.sim-tab').forEach(tab => {
   tab.addEventListener('click', () => {
@@ -704,14 +708,4 @@ document.querySelectorAll('.sim-tab').forEach(tab => {
 
 // Scroll reveal
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
-}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-</script>
-</body>
-</html>
+  entries.forEac
