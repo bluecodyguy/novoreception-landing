@@ -708,20 +708,17 @@ html:not(.js-ready) .reveal{opacity:1;transform:none}
 </footer>
 
 <!-- ═══ SCRIPTS ═══ -->
-<script>
-// Render email (avoids Cloudflare obfuscation)
-var p1 = 'team.novo';
-var p2 = 'reception';
-var p3 = 'gma';
-var p4 = 'il.com';
-var ea = p1 + p2 + String.fromCharCode(64) + p3 + p4;
+<script data-cfasync="false">
+// Render email (base64 encoded - Cloudflare cannot detect)
+var _d = atob('dGVhbS5ub3ZvcmVjZXB0aW9uQGdtYWlsLmNvbQ==');
+var _m = atob('bWFpbHRvOg==');
 var el = document.getElementById('emailLink');
-el.textContent = ea;
-el.onclick = function() { window.location = 'mai' + 'lto:' + ea; };
+el.textContent = _d;
+el.onclick = function() { window.open(_m + _d, '_self'); return false; };
 
 // Set form action dynamically
 var form = document.getElementById('contactForm');
-form.action = 'https://formsubmit.co/' + ea;
+form.action = 'https://formsubmit.co/' + _d;
 
 // Tab switching
 document.querySelectorAll('.sim-tab').forEach(tab => {
