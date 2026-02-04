@@ -712,13 +712,18 @@ html:not(.js-ready) .reveal{opacity:1;transform:none}
 // Render email (avoids Cloudflare obfuscation)
 var eu = 'team.novoreception';
 var ed = 'gmail.com';
+var ea = eu + '@' + ed;
 var el = document.getElementById('emailLink');
-el.href = 'mai' + 'lto:' + eu + '@' + ed;
-el.textContent = eu + '@' + ed;
+el.textContent = ea;
+el.style.cursor = 'pointer';
+el.addEventListener('click', function(e) {
+  e.preventDefault();
+  window.location.href = 'mai' + 'lto:' + ea;
+});
 
 // Set form action dynamically
 var form = document.getElementById('contactForm');
-form.action = 'https://formsubmit.co/' + eu + '@' + ed;
+form.action = 'https://formsubmit.co/' + ea;
 
 // Tab switching
 document.querySelectorAll('.sim-tab').forEach(tab => {
