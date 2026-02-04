@@ -649,7 +649,7 @@ html:not(.js-ready) .reveal{opacity:1;transform:none}
           <div class="ci-icon">✉️</div>
           <div>
             <h4>Email</h4>
-            <p><span id="emailLink" style="cursor:pointer;text-decoration:underline">loading...</span></p>
+            <p><button id="emailLink" type="button" style="background:none;border:none;color:var(--dark-muted);cursor:pointer;text-decoration:underline;font-family:inherit;font-size:inherit;padding:0">Click to email us</button></p>
           </div>
         </div>
         <div class="contact-row">
@@ -709,12 +709,10 @@ html:not(.js-ready) .reveal{opacity:1;transform:none}
 
 <!-- ═══ SCRIPTS ═══ -->
 <script data-cfasync="false">
-// Render email (base64 encoded - Cloudflare cannot detect)
+// Email click handler (no email text in DOM = Cloudflare can't detect it)
 var _d = atob('dGVhbS5ub3ZvcmVjZXB0aW9uQGdtYWlsLmNvbQ==');
 var _m = atob('bWFpbHRvOg==');
-var el = document.getElementById('emailLink');
-el.textContent = _d;
-el.onclick = function() { window.open(_m + _d, '_self'); return false; };
+document.getElementById('emailLink').onclick = function() { window.open(_m + _d, '_self'); };
 
 // Set form action dynamically
 var form = document.getElementById('contactForm');
