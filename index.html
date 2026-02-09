@@ -367,8 +367,8 @@ html:not(.js-ready) .reveal{opacity:1;transform:none}
   <div class="container">
     <div class="hero-grid">
       <div class="hero-content">
-        <h1>Every call answered.<br><em>Every opportunity captured.</em></h1>
-        <p class="hero-sub">NovoReception answers calls, understands your business, and books real appointments — 24/7 — without replacing your staff.</p>
+        <h1>Every call answered.<br><em>Every reservation captured.</em></h1>
+        <p class="hero-sub">NovoReception answers calls during the rush, handles reservations, and captures catering inquiries — 24/7 — so your staff can focus on guests.</p>
         <div class="hero-actions">
           <a href="#contact" class="btn btn-primary">Book a Consultation</a>
           <a href="tel:+14086386637" class="btn btn-ghost">Hear It Live → (408) 638-6637</a>
@@ -387,21 +387,21 @@ html:not(.js-ready) .reveal{opacity:1;transform:none}
           </div>
           <!-- Phase 2: Understanding -->
           <div class="anim-phase phase-understanding">
-            <div class="fragment f1"><span class="frag-dot"></span>New patient inquiry</div>
-            <div class="fragment f2"><span class="frag-dot"></span>Availability check</div>
-            <div class="fragment f3"><span class="frag-dot"></span>Friday afternoon</div>
+            <div class="fragment f1"><span class="frag-dot"></span>Reservation request</div>
+            <div class="fragment f2"><span class="frag-dot"></span>Party of 4</div>
+            <div class="fragment f3"><span class="frag-dot"></span>Friday at 7:30</div>
           </div>
           <!-- Phase 3: Booked -->
           <div class="anim-phase phase-booked">
             <div class="booked-icon">✓</div>
-            <p class="booked-title">Appointment Booked</p>
-            <p class="booked-time">Friday · 3:30 PM</p>
+            <p class="booked-title">Reservation Booked</p>
+            <p class="booked-time">Friday · 7:30 PM</p>
           </div>
           <!-- Context labels -->
           <div class="context-labels">
-            <span class="ctx c1">After hours</span>
-            <span class="ctx c2">During appointments</span>
-            <span class="ctx c3">When staff is busy</span>
+            <span class="ctx c1">During the rush</span>
+            <span class="ctx c2">After close</span>
+            <span class="ctx c3">When staff is slammed</span>
           </div>
         </div>
         <p class="anim-caption">Every call handled. Every opportunity captured.</p>
@@ -419,14 +419,30 @@ html:not(.js-ready) .reveal{opacity:1;transform:none}
       <p>Every AI receptionist is custom-built for how your business handles calls.</p>
     </div>
     <div class="sim-tabs reveal">
-      <button class="sim-tab active" data-tab="medspa">Med Spas</button>
-      <button class="sim-tab" data-tab="restaurant">Restaurants</button>
+      <button class="sim-tab active" data-tab="restaurant">Restaurants</button>
+      <button class="sim-tab" data-tab="medspa">Med Spas</button>
       <button class="sim-tab" data-tab="insurance">Insurance</button>
       <button class="sim-tab" data-tab="professional">Professional Services</button>
     </div>
     <div class="reveal">
+      <!-- Restaurant -->
+      <div class="sim-panel active" data-panel="restaurant">
+        <div class="sim-card">
+          <div class="sim-card-top">
+            <div class="status"><span class="status-dot"></span>NovoReception AI</div>
+            <span class="time">Live Call · 00:32</span>
+          </div>
+          <div class="sim-messages">
+            <div class="msg msg-ai">Thanks for calling Sofia's Kitchen, this is Sofia. How can I help you?</div>
+            <div class="msg msg-caller">I'd like to book a table for Friday night. Party of 4, around 7:30?</div>
+            <div class="msg msg-ai">Friday at 7:30 for four — I can set that up. Can I get a name and number for the reservation?</div>
+            <div class="msg msg-caller">John, 408-555-1234.</div>
+            <div class="msg msg-ai">Perfect, you're all set John. Friday at 7:30, party of four. We look forward to seeing you!</div>
+          </div>
+        </div>
+      </div>
       <!-- Med Spa -->
-      <div class="sim-panel active" data-panel="medspa">
+      <div class="sim-panel" data-panel="medspa">
         <div class="sim-card">
           <div class="sim-card-top">
             <div class="status"><span class="status-dot"></span>NovoReception AI</div>
@@ -438,22 +454,6 @@ html:not(.js-ready) .reveal{opacity:1;transform:none}
             <div class="msg msg-ai">I'd be happy to help. We have Tuesday at 2 PM and Thursday at 10 AM available. Which works better?</div>
             <div class="msg msg-caller">Thursday works.</div>
             <div class="msg msg-ai">You're all set for Thursday at 10 AM. We'll send a confirmation shortly. Is there anything else I can help with?</div>
-          </div>
-        </div>
-      </div>
-      <!-- Restaurant -->
-      <div class="sim-panel" data-panel="restaurant">
-        <div class="sim-card">
-          <div class="sim-card-top">
-            <div class="status"><span class="status-dot"></span>NovoReception AI</div>
-            <span class="time">Live Call · 00:32</span>
-          </div>
-          <div class="sim-messages">
-            <div class="msg msg-ai">Thank you for calling. How can I help you?</div>
-            <div class="msg msg-caller">I'd like to book a table for Friday night. Party of 4, around 7:30?</div>
-            <div class="msg msg-ai">Friday at 7:30 for four — I can set that up. Can I get a name and number?</div>
-            <div class="msg msg-caller">John, 408-555-1234.</div>
-            <div class="msg msg-ai">You're all set, John. Friday at 7:30, party of four. We look forward to seeing you.</div>
           </div>
         </div>
       </div>
@@ -502,14 +502,14 @@ html:not(.js-ready) .reveal{opacity:1;transform:none}
       <p>Your team is great when they're available. The issue is the structural gaps no amount of hiring can fix.</p>
     </div>
     <div class="stats-row">
-      <div class="stat reveal"><h3>35%</h3><p>of business calls go unanswered</p></div>
+      <div class="stat reveal"><h3>35%</h3><p>of restaurant calls go unanswered</p></div>
       <div class="stat reveal reveal-d1"><h3>85%</h3><p>of callers won't leave a voicemail</p></div>
-      <div class="stat reveal reveal-d2"><h3>$400+</h3><p>average revenue lost per missed call</p></div>
+      <div class="stat reveal reveal-d2"><h3>$500+</h3><p>average catering order lost per missed call</p></div>
     </div>
     <div class="issues">
-      <div class="issue reveal"><h4>After-hours calls</h4><p>40% of appointment requests come outside business hours. Those callers don't wait — they book elsewhere.</p></div>
-      <div class="issue reveal reveal-d1"><h4>Busy-hour calls</h4><p>You can't pause a treatment, step away from a table, or drop a client call to answer another line.</p></div>
-      <div class="issue reveal reveal-d2"><h4>The voicemail trap</h4><p>Most callers hang up instead of leaving a message. You never even know they called.</p></div>
+      <div class="issue reveal"><h4>After-hours calls</h4><p>40% of reservation and catering requests come after you close. Those callers don't wait — they book elsewhere.</p></div>
+      <div class="issue reveal reveal-d1"><h4>Rush hour chaos</h4><p>You can't leave the line, step away from a table, or drop an order to answer the phone during dinner service.</p></div>
+      <div class="issue reveal reveal-d2"><h4>The voicemail trap</h4><p>Most callers hang up instead of leaving a message. That catering inquiry? Gone. You never even know they called.</p></div>
     </div>
   </div>
 </section>
@@ -519,25 +519,25 @@ html:not(.js-ready) .reveal{opacity:1;transform:none}
   <div class="container">
     <div class="solution-header reveal">
       <p class="label">What NovoReception Handles</p>
-      <h2>Your always-on front desk</h2>
-      <p>Not a chatbot. A receptionist that knows your business and handles calls like your best employee would.</p>
+      <h2>Your always-on host</h2>
+      <p>Not a voicemail. A receptionist that knows your menu, hours, and policies — and handles calls like your best employee would.</p>
     </div>
     <div class="capabilities">
       <div class="capability reveal">
         <h4>Answers calls 24/7</h4>
-        <p>When your team is busy or your doors are closed, calls forward to NovoReception. Every call gets a live, helpful conversation — not a voicemail.</p>
+        <p>During the rush, after close, or when your staff is slammed — every call gets a live, helpful conversation. Not a voicemail.</p>
       </div>
       <div class="capability reveal reveal-d1">
-        <h4>Understands your business</h4>
-        <p>Custom-trained on your services, pricing, policies, and terminology. Answers questions like a knowledgeable member of your staff.</p>
+        <h4>Knows your restaurant</h4>
+        <p>Custom-trained on your menu, hours, specials, and catering packages. Answers questions like someone who actually works there.</p>
       </div>
       <div class="capability reveal reveal-d2">
-        <h4>Books appointments live</h4>
-        <p>Qualified callers get scheduled on the spot into your real calendar. No callback needed, no leads waiting.</p>
+        <h4>Books reservations on the spot</h4>
+        <p>Callers get booked immediately — no callback needed. Catering inquiries get captured with all the details so you can follow up and close.</p>
       </div>
       <div class="capability reveal reveal-d3">
         <h4>Full visibility on every call</h4>
-        <p>Complete transcripts, caller details, and booking confirmations. See exactly what was said and follow up personally when needed.</p>
+        <p>Complete transcripts, caller details, and reservation confirmations. See exactly what was said and follow up personally when needed.</p>
       </div>
     </div>
   </div>
@@ -552,8 +552,8 @@ html:not(.js-ready) .reveal{opacity:1;transform:none}
         <div class="honesty-label">Honest answer</div>
         <p>Some people will prefer a human. That's true.</p>
         <p>But here's the alternative: <strong>no one at all.</strong></p>
-        <p>When your team is unavailable, the choice isn't "AI vs. human." It's "AI vs. voicemail." And 85% of callers won't leave a voicemail.</p>
-        <p>Given the choice between talking to an AI that can actually help them — answer their questions, check availability, book an appointment — or talking to no one?</p>
+        <p>When your staff is in the weeds during dinner service, the choice isn't "AI vs. human." It's "AI vs. voicemail." And 85% of callers won't leave a voicemail.</p>
+        <p>Given the choice between talking to an AI that can actually help them — answer questions about the menu, check availability, book a reservation — or talking to no one?</p>
         <p><strong>Most people choose help.</strong></p>
       </div>
     </div>
@@ -572,17 +572,17 @@ html:not(.js-ready) .reveal{opacity:1;transform:none}
       <div class="step reveal">
         <div class="step-num">1</div>
         <h4>Quick consultation</h4>
-        <p>We learn about your business — services, hours, pricing, how you want calls handled.</p>
+        <p>We learn about your restaurant — menu, hours, reservation policies, catering packages, how you want calls handled.</p>
       </div>
       <div class="step reveal reveal-d1">
         <div class="step-num">2</div>
         <h4>Custom build</h4>
-        <p>We train your AI receptionist on your business. It follows your policies and sounds like part of your team.</p>
+        <p>We train your AI receptionist on your restaurant. It knows your specials, handles dietary questions, and sounds like part of your team.</p>
       </div>
       <div class="step reveal reveal-d2">
         <div class="step-num">3</div>
         <h4>Go live</h4>
-        <p>Forward calls when busy or after hours. Appointments start booking immediately. You see every transcript.</p>
+        <p>Forward calls when the kitchen is slammed or after close. Reservations start booking immediately. You see every transcript.</p>
       </div>
     </div>
   </div>
@@ -625,7 +625,7 @@ html:not(.js-ready) .reveal{opacity:1;transform:none}
         <a href="#contact" class="price-cta">Book a Consultation</a>
       </div>
     </div>
-    <p class="price-context reveal">A part-time receptionist costs $2,000–$3,000/month. NovoReception is $500/month and works 24/7.</p>
+    <p class="price-context reveal">A part-time host costs $2,000–$3,000/month. NovoReception is $500/month and answers calls 24/7.</p>
   </div>
 </section>
 
@@ -633,7 +633,7 @@ html:not(.js-ready) .reveal{opacity:1;transform:none}
 <section class="contact-section" id="contact">
   <div class="container">
     <div class="contact-header reveal">
-      <h2>Stop letting calls slip through.</h2>
+      <h2>Stop losing reservations to voicemail.</h2>
       <p>See what happens when every call gets answered. Book a consultation and we'll get back to you within 24 hours.</p>
     </div>
     <div class="contact-grid">
@@ -681,11 +681,11 @@ html:not(.js-ready) .reveal{opacity:1;transform:none}
           <input type="text" name="company" placeholder="Business name">
         </div>
         <select name="industry">
-          <option value="" disabled selected>What industry are you in?</option>
-          <option value="restaurant">Restaurant / Hospitality</option>
-          <option value="medspa">Med Spa / Clinic</option>
-          <option value="insurance">Insurance / Finance</option>
-          <option value="professional">Professional Services</option>
+          <option value="" disabled selected>What type of restaurant?</option>
+          <option value="fine-dining">Fine Dining</option>
+          <option value="casual">Casual / Family</option>
+          <option value="fast-casual">Fast Casual</option>
+          <option value="catering">Catering-Heavy</option>
           <option value="other">Other</option>
         </select>
         <textarea name="message" placeholder="What's your biggest challenge with phone calls right now?"></textarea>
