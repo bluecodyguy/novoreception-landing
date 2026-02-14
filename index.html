@@ -175,19 +175,13 @@ nav{position:fixed;top:0;width:100%;z-index:100;padding:18px 0;background:rgba(2
 }
 
 /* ═══════════════════════════════════════════════
-   CALL SIMULATIONS (Tabbed)
+   CALL SIMULATIONS
    ═══════════════════════════════════════════════ */
 .sims-section{background:var(--light);border-top:1px solid var(--border)}
 .sims-section .container{max-width:720px}
 .sims-header{text-align:center;margin-bottom:48px}
 .sims-header h2{color:var(--text)}
 .sims-header p{margin-top:10px;color:var(--text-muted);font-size:16px}
-.sim-tabs{display:flex;justify-content:center;gap:8px;margin-bottom:32px;flex-wrap:wrap}
-.sim-tab{padding:9px 18px;border-radius:8px;font-size:14px;font-weight:500;color:var(--text-muted);background:transparent;border:1px solid var(--border);transition:all 0.2s}
-.sim-tab:hover{border-color:#ccc}
-.sim-tab.active{background:var(--text);color:#fff;border-color:var(--text)}
-.sim-panel{display:none}
-.sim-panel.active{display:block}
 .sim-card{background:var(--dark-card);border-radius:16px;overflow:hidden;border:1px solid var(--dark-border)}
 .sim-card-top{padding:14px 20px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--dark-border)}
 .sim-card-top .status{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:var(--dark-text)}
@@ -314,6 +308,10 @@ nav{position:fixed;top:0;width:100%;z-index:100;padding:18px 0;background:rgba(2
 footer{background:var(--dark);border-top:1px solid var(--dark-border);padding:28px 0;text-align:center;font-size:13px;color:var(--dark-muted)}
 footer a{color:var(--accent);text-decoration:none}
 footer a:hover{text-decoration:underline}
+.footer-links{margin-bottom:8px;display:flex;align-items:center;justify-content:center;gap:16px}
+.footer-links a{display:inline-flex;align-items:center}
+.ig-link{color:var(--dark-muted);transition:color 0.2s}
+.ig-link:hover{color:var(--accent)}
 
 /* ─── SCROLL REVEALS ─── */
 .reveal{opacity:0;transform:translateY(24px);transition:opacity 0.7s ease,transform 0.7s ease}
@@ -336,8 +334,6 @@ html:not(.js-ready) .reveal{opacity:1;transform:none}
 @media(max-width:480px){
   .hero-actions{flex-direction:column;align-items:stretch}
   .hero-actions .btn{justify-content:center}
-  .sim-tabs{gap:6px}
-  .sim-tab{padding:7px 12px;font-size:13px}
 }
 </style>
 </head>
@@ -367,8 +363,8 @@ html:not(.js-ready) .reveal{opacity:1;transform:none}
   <div class="container">
     <div class="hero-grid">
       <div class="hero-content">
-        <h1>Every call answered.<br><em>Every reservation captured.</em></h1>
-        <p class="hero-sub">NovoReception answers calls during the rush, handles reservations, and captures catering inquiries — 24/7 — so your staff can focus on guests.</p>
+        <h1>Every call answered.<br><em>Every appointment booked.</em></h1>
+        <p class="hero-sub">NovoReception answers calls when your front desk is busy, handles appointment requests, and captures new client inquiries — 24/7 — so your team can focus on clients.</p>
         <div class="hero-actions">
           <a href="#contact" class="btn btn-primary">Book a Consultation</a>
           <a href="tel:+14086386637" class="btn btn-ghost">Hear It Live → (408) 638-6637</a>
@@ -387,21 +383,21 @@ html:not(.js-ready) .reveal{opacity:1;transform:none}
           </div>
           <!-- Phase 2: Understanding -->
           <div class="anim-phase phase-understanding">
-            <div class="fragment f1"><span class="frag-dot"></span>Reservation request</div>
-            <div class="fragment f2"><span class="frag-dot"></span>Party of 4</div>
-            <div class="fragment f3"><span class="frag-dot"></span>Friday at 7:30</div>
+            <div class="fragment f1"><span class="frag-dot"></span>New client inquiry</div>
+            <div class="fragment f2"><span class="frag-dot"></span>Botox consultation</div>
+            <div class="fragment f3"><span class="frag-dot"></span>Thursday at 2pm</div>
           </div>
           <!-- Phase 3: Booked -->
           <div class="anim-phase phase-booked">
             <div class="booked-icon">✓</div>
-            <p class="booked-title">Reservation Booked</p>
-            <p class="booked-time">Friday · 7:30 PM</p>
+            <p class="booked-title">Appointment Booked</p>
+            <p class="booked-time">Thursday · 2:00 PM</p>
           </div>
           <!-- Context labels -->
           <div class="context-labels">
-            <span class="ctx c1">During the rush</span>
-            <span class="ctx c2">After close</span>
-            <span class="ctx c3">When staff is slammed</span>
+            <span class="ctx c1">During a treatment</span>
+            <span class="ctx c2">After hours</span>
+            <span class="ctx c3">When front desk is busy</span>
           </div>
         </div>
         <p class="anim-caption">Every call handled. Every opportunity captured.</p>
@@ -410,83 +406,28 @@ html:not(.js-ready) .reveal{opacity:1;transform:none}
   </div>
 </section>
 
-<!-- ═══ CALL SIMULATIONS ═══ -->
+<!-- ═══ CALL SIMULATION ═══ -->
 <section class="sims-section" id="demo">
   <div class="container">
     <div class="sims-header reveal">
       <p class="label">See It In Action</p>
-      <h2>Trained for your industry</h2>
+      <h2>Trained for your med spa</h2>
       <p>Every AI receptionist is custom-built for how your business handles calls.</p>
     </div>
-    <div class="sim-tabs reveal">
-      <button class="sim-tab active" data-tab="restaurant">Restaurants</button>
-      <button class="sim-tab" data-tab="medspa">Med Spas</button>
-      <button class="sim-tab" data-tab="insurance">Insurance</button>
-      <button class="sim-tab" data-tab="professional">Professional Services</button>
-    </div>
     <div class="reveal">
-      <!-- Restaurant -->
-      <div class="sim-panel active" data-panel="restaurant">
-        <div class="sim-card">
-          <div class="sim-card-top">
-            <div class="status"><span class="status-dot"></span>NovoReception AI</div>
-            <span class="time">Live Call · 00:32</span>
-          </div>
-          <div class="sim-messages">
-            <div class="msg msg-ai">Thanks for calling Sofia's Kitchen, this is Sofia. How can I help you?</div>
-            <div class="msg msg-caller">I'd like to book a table for Friday night. Party of 4, around 7:30?</div>
-            <div class="msg msg-ai">Friday at 7:30 for four — I can set that up. Can I get a name and number for the reservation?</div>
-            <div class="msg msg-caller">John, 408-555-1234.</div>
-            <div class="msg msg-ai">Perfect, you're all set John. Friday at 7:30, party of four. We look forward to seeing you!</div>
-          </div>
+      <div class="sim-card">
+        <div class="sim-card-top">
+          <div class="status"><span class="status-dot"></span>NovoReception AI</div>
+          <span class="time">Live Call · 00:38</span>
         </div>
-      </div>
-      <!-- Med Spa -->
-      <div class="sim-panel" data-panel="medspa">
-        <div class="sim-card">
-          <div class="sim-card-top">
-            <div class="status"><span class="status-dot"></span>NovoReception AI</div>
-            <span class="time">Live Call · 00:38</span>
-          </div>
-          <div class="sim-messages">
-            <div class="msg msg-ai">Thank you for calling Glow Med Spa. How can I help you today?</div>
-            <div class="msg msg-caller">Hi, I'd like to book a Botox consultation for next week.</div>
-            <div class="msg msg-ai">I'd be happy to help. We have Tuesday at 2 PM and Thursday at 10 AM available. Which works better?</div>
-            <div class="msg msg-caller">Thursday works.</div>
-            <div class="msg msg-ai">You're all set for Thursday at 10 AM. We'll send a confirmation shortly. Is there anything else I can help with?</div>
-          </div>
-        </div>
-      </div>
-      <!-- Insurance -->
-      <div class="sim-panel" data-panel="insurance">
-        <div class="sim-card">
-          <div class="sim-card-top">
-            <div class="status"><span class="status-dot"></span>NovoReception AI</div>
-            <span class="time">Live Call · 00:41</span>
-          </div>
-          <div class="sim-messages">
-            <div class="msg msg-ai">Thank you for calling Bay Area Insurance. How can I help?</div>
-            <div class="msg msg-caller">I need a quote on renewing my home insurance policy.</div>
-            <div class="msg msg-ai">I can help with that. Let me schedule you with an agent who specializes in home policies. When works best?</div>
-            <div class="msg msg-caller">Tomorrow afternoon if possible.</div>
-            <div class="msg msg-ai">Done — tomorrow at 2 PM with our home insurance team. You'll get a confirmation email shortly.</div>
-          </div>
-        </div>
-      </div>
-      <!-- Professional -->
-      <div class="sim-panel" data-panel="professional">
-        <div class="sim-card">
-          <div class="sim-card-top">
-            <div class="status"><span class="status-dot"></span>NovoReception AI</div>
-            <span class="time">Live Call · 00:35</span>
-          </div>
-          <div class="sim-messages">
-            <div class="msg msg-ai">Thank you for calling. How can I help you today?</div>
-            <div class="msg msg-caller">I need to set up a consultation for a contract review.</div>
-            <div class="msg msg-ai">I can schedule that. We have availability Thursday or next Monday. Which do you prefer?</div>
-            <div class="msg msg-caller">Thursday, please.</div>
-            <div class="msg msg-ai">Thursday consultation is booked. We'll send a confirmation with details shortly.</div>
-          </div>
+        <div class="sim-messages">
+          <div class="msg msg-ai">Thank you for calling Glow Med Spa. How can I help you today?</div>
+          <div class="msg msg-caller">Hi, I'd like to book a Botox consultation for next week.</div>
+          <div class="msg msg-ai">I'd be happy to help. We have Tuesday at 2 PM and Thursday at 10 AM available. Which works better?</div>
+          <div class="msg msg-caller">Thursday works.</div>
+          <div class="msg msg-ai">Perfect. Can I get your name and phone number for the appointment?</div>
+          <div class="msg msg-caller">Sarah, 408-555-1234.</div>
+          <div class="msg msg-ai">You're all set Sarah. Thursday at 10 AM for a Botox consultation. We'll send a confirmation shortly. Is there anything else I can help with?</div>
         </div>
       </div>
     </div>
@@ -502,14 +443,14 @@ html:not(.js-ready) .reveal{opacity:1;transform:none}
       <p>Your team is great when they're available. The issue is the structural gaps no amount of hiring can fix.</p>
     </div>
     <div class="stats-row">
-      <div class="stat reveal"><h3>35%</h3><p>of restaurant calls go unanswered</p></div>
+      <div class="stat reveal"><h3>62%</h3><p>of calls to small businesses go unanswered</p></div>
       <div class="stat reveal reveal-d1"><h3>85%</h3><p>of callers won't leave a voicemail</p></div>
-      <div class="stat reveal reveal-d2"><h3>$500+</h3><p>average catering order lost per missed call</p></div>
+      <div class="stat reveal reveal-d2"><h3>$500+</h3><p>average new client value lost per missed call</p></div>
     </div>
     <div class="issues">
-      <div class="issue reveal"><h4>After-hours calls</h4><p>40% of reservation and catering requests come after you close. Those callers don't wait — they book elsewhere.</p></div>
-      <div class="issue reveal reveal-d1"><h4>Rush hour chaos</h4><p>You can't leave the line, step away from a table, or drop an order to answer the phone during dinner service.</p></div>
-      <div class="issue reveal reveal-d2"><h4>The voicemail trap</h4><p>Most callers hang up instead of leaving a message. That catering inquiry? Gone. You never even know they called.</p></div>
+      <div class="issue reveal"><h4>After-hours calls</h4><p>Clients search for med spas at night. They want to book at 9pm. If you don't answer, they call the competitor who does.</p></div>
+      <div class="issue reveal reveal-d1"><h4>Mid-treatment chaos</h4><p>You can't pause a facial, step away from a client, or drop what you're doing to answer the phone during a treatment.</p></div>
+      <div class="issue reveal reveal-d2"><h4>The voicemail trap</h4><p>Most callers hang up instead of leaving a message. That Botox inquiry? Gone. You never even know they called.</p></div>
     </div>
   </div>
 </section>
@@ -519,25 +460,25 @@ html:not(.js-ready) .reveal{opacity:1;transform:none}
   <div class="container">
     <div class="solution-header reveal">
       <p class="label">What NovoReception Handles</p>
-      <h2>Your always-on host</h2>
-      <p>Not a voicemail. A receptionist that knows your menu, hours, and policies — and handles calls like your best employee would.</p>
+      <h2>Your always-on front desk</h2>
+      <p>Not a voicemail. A receptionist that knows your services, hours, and pricing — and handles calls like your best employee would.</p>
     </div>
     <div class="capabilities">
       <div class="capability reveal">
         <h4>Answers calls 24/7</h4>
-        <p>During the rush, after close, or when your staff is slammed — every call gets a live, helpful conversation. Not a voicemail.</p>
+        <p>During treatments, after hours, or when your front desk is busy — every call gets a live, helpful conversation. Not a voicemail.</p>
       </div>
       <div class="capability reveal reveal-d1">
-        <h4>Knows your restaurant</h4>
-        <p>Custom-trained on your menu, hours, specials, and catering packages. Answers questions like someone who actually works there.</p>
+        <h4>Knows your med spa</h4>
+        <p>Custom-trained on your services, pricing, hours, and policies. Answers questions like someone who actually works there.</p>
       </div>
       <div class="capability reveal reveal-d2">
-        <h4>Books reservations on the spot</h4>
-        <p>Callers get booked immediately — no callback needed. Catering inquiries get captured with all the details so you can follow up and close.</p>
+        <h4>Books appointments on the spot</h4>
+        <p>Callers get booked immediately — no callback needed. New client inquiries get captured with all the details so you can follow up and close.</p>
       </div>
       <div class="capability reveal reveal-d3">
         <h4>Full visibility on every call</h4>
-        <p>Complete transcripts, caller details, and reservation confirmations. See exactly what was said and follow up personally when needed.</p>
+        <p>Complete transcripts, caller details, and appointment confirmations. See exactly what was said and follow up personally when needed.</p>
       </div>
     </div>
   </div>
@@ -547,13 +488,13 @@ html:not(.js-ready) .reveal{opacity:1;transform:none}
 <section class="honesty-section">
   <div class="container">
     <div class="honesty-inner reveal">
-      <h2>"Won't my customers hate talking to an AI?"</h2>
+      <h2>"Won't my clients hate talking to an AI?"</h2>
       <div class="honesty-card">
         <div class="honesty-label">Honest answer</div>
         <p>Some people will prefer a human. That's true.</p>
         <p>But here's the alternative: <strong>no one at all.</strong></p>
-        <p>When your staff is in the weeds during dinner service, the choice isn't "AI vs. human." It's "AI vs. voicemail." And 85% of callers won't leave a voicemail.</p>
-        <p>Given the choice between talking to an AI that can actually help them — answer questions about the menu, check availability, book a reservation — or talking to no one?</p>
+        <p>When you're in the middle of a treatment, the choice isn't "AI vs. human." It's "AI vs. voicemail." And 85% of callers won't leave a voicemail.</p>
+        <p>Given the choice between talking to an AI that can actually help them — answer questions about services, check availability, book an appointment — or talking to no one?</p>
         <p><strong>Most people choose help.</strong></p>
       </div>
     </div>
@@ -572,17 +513,17 @@ html:not(.js-ready) .reveal{opacity:1;transform:none}
       <div class="step reveal">
         <div class="step-num">1</div>
         <h4>Quick consultation</h4>
-        <p>We learn about your restaurant — menu, hours, reservation policies, catering packages, how you want calls handled.</p>
+        <p>We learn about your med spa — services, pricing, hours, booking policies, how you want calls handled.</p>
       </div>
       <div class="step reveal reveal-d1">
         <div class="step-num">2</div>
         <h4>Custom build</h4>
-        <p>We train your AI receptionist on your restaurant. It knows your specials, handles dietary questions, and sounds like part of your team.</p>
+        <p>We train your AI receptionist on your med spa. It knows your treatments, handles pricing questions, and sounds like part of your team.</p>
       </div>
       <div class="step reveal reveal-d2">
         <div class="step-num">3</div>
         <h4>Go live</h4>
-        <p>Forward calls when the kitchen is slammed or after close. Reservations start booking immediately. You see every transcript.</p>
+        <p>Forward calls when you're with clients or after hours. Appointments start booking immediately. You see every transcript.</p>
       </div>
     </div>
   </div>
@@ -625,7 +566,7 @@ html:not(.js-ready) .reveal{opacity:1;transform:none}
         <a href="#contact" class="price-cta">Book a Consultation</a>
       </div>
     </div>
-    <p class="price-context reveal">A part-time host costs $2,000–$3,000/month. NovoReception is $500/month and answers calls 24/7.</p>
+    <p class="price-context reveal">A part-time receptionist costs $2,000–$3,000/month. NovoReception is $500/month and answers calls 24/7.</p>
   </div>
 </section>
 
@@ -633,7 +574,7 @@ html:not(.js-ready) .reveal{opacity:1;transform:none}
 <section class="contact-section" id="contact">
   <div class="container">
     <div class="contact-header reveal">
-      <h2>Stop losing reservations to voicemail.</h2>
+      <h2>Stop losing clients to voicemail.</h2>
       <p>See what happens when every call gets answered. Book a consultation and we'll get back to you within 24 hours.</p>
     </div>
     <div class="contact-grid">
@@ -649,7 +590,7 @@ html:not(.js-ready) .reveal{opacity:1;transform:none}
           <div class="ci-icon">✉️</div>
           <div>
             <h4>Email</h4>
-            <p>team.novoreception&#64;gmail.com</p>
+            <p><a href="mailto:manav@novoreception.com">manav@novoreception.com</a></p>
           </div>
         </div>
         <div class="contact-row">
@@ -681,11 +622,13 @@ html:not(.js-ready) .reveal{opacity:1;transform:none}
           <input type="text" name="company" placeholder="Business name">
         </div>
         <select name="industry">
-          <option value="" disabled selected>What type of restaurant?</option>
-          <option value="fine-dining">Fine Dining</option>
-          <option value="casual">Casual / Family</option>
-          <option value="fast-casual">Fast Casual</option>
-          <option value="catering">Catering-Heavy</option>
+          <option value="" disabled selected>What type of med spa?</option>
+          <option value="botox-fillers">Botox & Fillers</option>
+          <option value="laser">Laser Treatments</option>
+          <option value="facials">Facials & Skincare</option>
+          <option value="body-contouring">Body Contouring</option>
+          <option value="iv-therapy">IV Therapy</option>
+          <option value="full-service">Full Service Med Spa</option>
           <option value="other">Other</option>
         </select>
         <textarea name="message" placeholder="What's your biggest challenge with phone calls right now?"></textarea>
@@ -703,27 +646,23 @@ html:not(.js-ready) .reveal{opacity:1;transform:none}
 <!-- ═══ FOOTER ═══ -->
 <footer>
   <div class="container">
-    <span>© 2026 NovoReception. A <a href="https://krynovo.com" target="_blank">Krynovo</a> company.</span>
+    <div class="footer-links">
+      <a href="mailto:manav@novoreception.com">manav@novoreception.com</a>
+      <a href="https://instagram.com/novoreception" target="_blank" class="ig-link">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+        </svg>
+      </a>
+    </div>
+    <span>© 2025 NovoReception. A <a href="https://krynovo.com" target="_blank">Krynovo</a> company.</span>
   </div>
 </footer>
 
 <!-- ═══ SCRIPTS ═══ -->
 <script data-cfasync="false">
 // Form action
-var _d = atob('dGVhbS5ub3ZvcmVjZXB0aW9uQGdtYWlsLmNvbQ==');
 var form = document.getElementById('contactForm');
-form.action = 'https://formsubmit.co/' + _d;
-
-// Tab switching
-document.querySelectorAll('.sim-tab').forEach(tab => {
-  tab.addEventListener('click', () => {
-    const target = tab.dataset.tab;
-    document.querySelectorAll('.sim-tab').forEach(t => t.classList.remove('active'));
-    document.querySelectorAll('.sim-panel').forEach(p => p.classList.remove('active'));
-    tab.classList.add('active');
-    document.querySelector('[data-panel="' + target + '"]').classList.add('active');
-  });
-});
+form.action = 'https://formsubmit.co/manav@novoreception.com';
 
 // Form submission
 form.addEventListener('submit', function(e) {
